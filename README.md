@@ -2,6 +2,11 @@
 
 Tutorial: React Typescript Course by Techbase (https://www.youtube.com/playlist?list=PLG-Mk4wQm9_LyKE5EwoZz2_GGXR-zJ5Ml) 
 
+Other resources:
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example
+https://github.com/piotrwitek/react-redux-typescript-guide#react--redux-in-typescript---complete-guide
+https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
