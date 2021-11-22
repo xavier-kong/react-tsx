@@ -1,3 +1,7 @@
+# I am learning about Typescript for React! See my progress in this repository!
+
+Tutorial: React Typescript Course by Techbase (https://www.youtube.com/playlist?list=PLG-Mk4wQm9_LyKE5EwoZz2_GGXR-zJ5Ml) 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
