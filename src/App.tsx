@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { User } from './interfaces'
 
-interface AppProps {
-  headerText: string;
-  extraText?: string;
-}
+function App() {
+  const [ user, setUser ] = useState<User | null>(null);
 
-function App({ headerText, extraText }: AppProps) {
+  const fetchUser = () => setUser({
+    name: 'Mike',
+    age: 24,
+    county: 'No',
+    address: {
+      street: 'main',
+      code: 'none'
+    },
+    admin: false
+  })
+
   return (
     <>
-      <h1>{headerText}</h1>
-      {extraText && <p>{extraText}</p>}
+      <button onClick={fetchUser}>Fetch</button>
+      {user && <p>{user.name}</p>}
     </>
   )
 };
