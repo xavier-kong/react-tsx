@@ -1,15 +1,37 @@
 import React, { useState, useContext } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { InputValueContext } from './context/InputValueContext'
 
+// Details
+// Shipping
+// Payment
+
+type CheckoutStep = "Details" | "Shipping" | "Payment"
 
 function App() {
-  const { state, dispatch } = useContext(InputValueContext)
+  const [ checkoutStep, setCheckoutStep ] = useState<CheckoutStep>("Details")
+
   return (
     <>
-      <p>Value: {state.inputValue}</p>
-      <button onClick={() => dispatch({ type: "SET_INPUT_VALUE_TO_100" })}>SET VALUE TO 100</button>
+      {checkoutStep === "Details" &&
+      <>
+        <h2>Details</h2>
+        <button type="button" onClick={() => setCheckoutStep("Shipping")}>Next</button>
+      </>
+      }
+
+      {checkoutStep === "Shipping" &&
+      <>
+        <h2>Shipping</h2>
+        <button type="button" onClick={() => setCheckoutStep("Payment")}>Next</button>
+      </>
+      }
+
+      {checkoutStep === "Payment" &&
+      <>
+        <h2>Details</h2>
+        <button type="button" onClick={() => setCheckoutStep("Shipping")}>Next</button>
+      </>
+      }
     </>
   )
 };
