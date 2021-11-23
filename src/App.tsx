@@ -1,37 +1,27 @@
 import React, { useState, useContext } from 'react';
+import DataGrid from "./components/DataGrid";
 import './App.css';
 
-// Details
-// Shipping
-// Payment
-
-type CheckoutStep = "Details" | "Shipping" | "Payment"
-
 function App() {
-  const [ checkoutStep, setCheckoutStep ] = useState<CheckoutStep>("Details")
+  const users = [
+    { id: 1, name: "John", age: 55 },
+    { id: 2, name: "Mitchel", age: 23 },
+    { id: 3, name: "Mike", age: 50 },
+  ];
+
+  const orders = [
+    { id: 1, quantity: 5, amount: 55 },
+    { id: 2, quantity: 2, amount: 23 },
+    { id: 3, quantity: 1, amount: 50 },
+  ]
 
   return (
     <>
-      {checkoutStep === "Details" &&
-      <>
-        <h2>Details</h2>
-        <button type="button" onClick={() => setCheckoutStep("Shipping")}>Next</button>
-      </>
-      }
+      <DataGrid items={users} />
 
-      {checkoutStep === "Shipping" &&
-      <>
-        <h2>Shipping</h2>
-        <button type="button" onClick={() => setCheckoutStep("Payment")}>Next</button>
-      </>
-      }
+      <br />
 
-      {checkoutStep === "Payment" &&
-      <>
-        <h2>Details</h2>
-        <button type="button" onClick={() => setCheckoutStep("Shipping")}>Next</button>
-      </>
-      }
+      <DataGrid items={orders} />
     </>
   )
 };
